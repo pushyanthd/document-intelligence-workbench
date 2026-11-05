@@ -13,7 +13,7 @@ Current development setup uses the [pinned parser and prior-version upgrade guid
 Clone this repository and enter its root. Use Python 3.12; the default application and deterministic tests have no third-party Python dependencies. The commands below run directly from source, so an editable install is unnecessary. Commit-retained fixtures and evidence are required; a wheel alone is not the demo distribution.
 
 ```sh
-git clone https://github.com/FlashPD/document-intelligence-workbench.git
+git clone https://github.com/pushyanthd/document-intelligence-workbench.git
 cd document-intelligence-workbench
 make test
 make eval-verify-corpus
@@ -190,7 +190,7 @@ gh release create v0.1.0-experimental \
   --notes-file docs/releases/v0.1.0-experimental.md
 
 git clone --branch v0.1.0-experimental --single-branch \
-  https://github.com/FlashPD/document-intelligence-workbench.git \
+  https://github.com/pushyanthd/document-intelligence-workbench.git \
   artifacts/published-release-check
 make -C artifacts/published-release-check release-checkout \
   REF=v0.1.0-experimental OUTPUT=artifacts/published-tag-check

@@ -1,6 +1,6 @@
 # Full release backlog
 
-Last updated: October 4, 2026, America/Chicago.
+Last updated: November 5, 2026, America/Chicago.
 
 This is the handoff for completing the local invoice workbench for a senior AI engineer portfolio. The published baseline is `v0.1.0-experimental`, commit `6c2b3c524baee68e8598408e415bdc7a043f3d73`. The full release must satisfy the [v1 contract](v1-release-contract.md); passing the existing portfolio audit alone is insufficient.
 
@@ -74,7 +74,7 @@ Remaining: final-source G05/G08 confirmation is B07; comprehensive G08 parser/mo
 
 ## CI repair — October 4
 
-The [failed Actions run](https://github.com/FlashPD/document-intelligence-workbench/actions/runs/37180170364) tested commit `97e582a`: seven checkout checks passed and `post_pilot_corrections` failed. The October 3 report bound older intake/review source, so its strict reproduction check correctly rejected implementation drift after B02. Preserve that historical report.
+The [failed Actions run](https://github.com/pushyanthd/document-intelligence-workbench/actions/runs/37180170364) tested commit `97e582a`: seven checkout checks passed and `post_pilot_corrections` failed. The October 3 report bound older intake/review source, so its strict reproduction check correctly rejected implementation drift after B02. Preserve that historical report.
 
 The [new correction report](../evals/post-pilot-corrections-2026-10-04.json) reproduces the same two unapproved corrections with current lifecycle/storage dependencies included in the source inventory. `verify_release_checkout.py` now selects this report. Strict source/result equality, original-pilot preservation and approval invalidation remain enforced. `PYTHONPATH=src python3.12 scripts/correct_pilot_records.py verify evals/post-pilot-corrections-2026-10-04.json` passes. **All eight isolated working-source checkout checks now pass**, including all 335 deterministic tests. Command: `make release-checkout OUTPUT=artifacts/access-ci-checkout-2026-10-04-001`; [retained report](../evals/access-checkout-2026-10-04/report.json). This report binds the checked source snapshot before the subsequent documentation-only handoff update/evidence retention, not a new committed or published tree. The repair is now committed in `d9f4e67`; hosted CI still needs a run after the commit is pushed. The user's HTTPS push failed with HTTP 400; a read-only `git ls-remote origin refs/heads/main` check still found `97e582a`, so the failed attempt did not update the remote branch. The exact commit also passes all eight isolated checkout checks (335 tests): `make release-checkout REF=d9f4e67 OUTPUT=artifacts/reviewer-commit-checkout-2026-10-04-001`; [retained committed-tree report](../evals/reviewer-commit-checkout-2026-10-04/report.json). Publication remains a separately requested action.
 
@@ -257,6 +257,22 @@ The [updated fifteen-gate index](../evals/release-gate-review-2026-10-04/refresh
 **October 4 remaining-dependency revalidation:** the prior goal turn made progress by completing current-source setup/upgrade, 409-test/twelve-check checkout, eleven-check audit, guide reconciliation and the new gate index. This turn's [additional primary-source acquisition review](../evals/storage-inventory-2026-10-04/acquisition-review.json) confirms FATURA releases generated JPEGs and KVP10k retrieves original PDF pages from external sites without qualifying selected scanner histories or per-document original permissions. Neither supplies a qualified selection. No files downloaded, no contacts sent, no predictions/labels fabricated, and no archive outcome changed. G06/G11 remain pending. The [concrete G12 decision](group-memory.md#pending-g12-acceptance-decision) distinguishes retaining unavailable continuous-peak coverage from an explicit user-approved revision to declared sampled accounting; no revision/closure is assumed. All 719 relative links/43 Markdown anchors and diff checks pass; result retained in `evals/storage-inventory-2026-10-04/acquisition-document-links.json`. Current contract, all 52 application/UI hashes and all 24 indexed reports remain unchanged. The G12 decision question is pending; no response or approval is inferred. No new code/runtime checks are needed for this documentation-only work. Next action depends on actual qualified originals/human assessments and a memory acceptance decision or stronger peak evidence; source tests/presentation already pass.
 
 **October 4 dependency audit — third consecutive no-progress continuation; blocked threshold met:** the last progress turn produced publisher/acquisition evidence and the concrete pending G12 decision. Three successive continuations revalidate the same missing external inputs without release progress. Current-state revalidation of retained and runtime study protocols finds only five-case `diagnostic` freezes, all captures `synthetic`, no production-mode freeze and **0/43 completed assessments per variant**. The contract and all 52 application/UI hashes remain unchanged; no qualified production selection, human judgments or explicit memory acceptance response has arrived. The scan-source/human-review question and G12 decision are pending. No useful independent implementation/measurement step remains before these dependencies; repeating passed checks cannot satisfy them. Full v1 stays incomplete; the blocked-audit threshold is now met and the goal is being marked blocked on these actual external dependencies. Next action: obtain qualified originals plus actual human assessments and memory acceptance/evidence, then continue the established production/final-identity sequence. This handoff update is bookkeeping, not release progress.
+
+## B07 repository URL maintenance — November 5, 2026
+
+Status: repository URL maintenance complete; B07 and full v1 acceptance remain in progress.
+Updated the clone URLs in `docs/portfolio-release.md` and
+`docs/releases/v0.1.0-experimental.md`, the historical Actions-run link in this backlog, and the
+local `origin` remote to the current `pushyanthd` GitHub account. Historical outcomes, source
+identities, release tags and retained runtime reports are unchanged.
+
+Validation: case-insensitive old-username scan of tracked files, repository-relative link checks
+for the changed Markdown files, and `git diff --check`. These are documentation/configuration
+changes; no new inference, runtime acceptance, commit, tag or publication is claimed.
+
+Remaining/next concrete action: the maintainer reviews and commits the URL updates. The existing
+G06/G11 scan and human-assessment requirements, G12 memory acceptance/evidence, and B07 final
+release identity/publication requirements remain as recorded above.
 
 ## Maintaining the handoff
 
